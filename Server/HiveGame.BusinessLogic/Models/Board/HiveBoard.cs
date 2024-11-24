@@ -12,6 +12,7 @@ namespace HiveGame.BusinessLogic.Models.Board
 {
     public class HiveBoard
     {
+        // może być readonly
         public Dictionary<string, Vertex> _board;
         public HiveBoard()
         {

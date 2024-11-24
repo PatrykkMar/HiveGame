@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace HiveGame.BusinessLogic.Repositories
 {
+    // Można oddzielić interfejs do oddzielnego folderu, np. Contract/IGameRepository.cs
     public interface IGameRepository
     {
         long Count { get; }
@@ -40,16 +41,19 @@ namespace HiveGame.BusinessLogic.Repositories
             _games.InsertOne(item);
         }
 
+        // Lepiej użyć konkretnego typu List<Game>, jeżeli jawnie jest zwracany w Linq
         public IEnumerable<Game> GetAll()
         {
             return _games.Find(_ => true).ToList();
         }
 
+        // Można użyć SingleOrDefault, ponieważ jeżeli będzie więcej niż jedno takie samo Id zostanie rzucony wyjątek
         public Game? GetByGameId(string gameId)
         {
             return _games.Find(game => game.Id == gameId).FirstOrDefault();
         }
 
+        // Można użyć SingleOrDefault, ponieważ jeżeli będzie więcej niż jedno takie samo PlayerId zostanie rzucony wyjątek
         public Game? GetByPlayerId(string playerId)
         {
             return _games.Find(game => game.Players.Any(player => player.PlayerId == playerId)).FirstOrDefault();

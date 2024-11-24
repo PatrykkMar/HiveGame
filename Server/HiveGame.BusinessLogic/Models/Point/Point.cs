@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace HiveGame.BusinessLogic.Models
 {
+    // w C# jest wbudowana struktura Point, pytanie czy ona nie jest wystarczająca
+    // w tym przypadku typ struct bądź record będzie lepszy
     public class Point2D
     {
         public int X { get; set; }

@@ -31,6 +31,7 @@ namespace HiveGame.BusinessLogic.Models.Board
                 reasonwhymoveimpossible = whyMoveImpossible;
         }
 
+        // publiczne właściwości powinny być zapisane CamelCase
         public long id { get; set; }
         public int x { get; set; }
         public int y { get; set; }

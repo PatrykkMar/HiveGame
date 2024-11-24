@@ -34,6 +34,7 @@ namespace HiveGame.BusinessLogic.Factories
                 {
                     if(insect == InsectType.Queen)
                         player.PlayerInsects.Add(insect, 1);
+                    // lepiej przenieść tablicę na początek definicji metody
                     else if(new InsectType[] { InsectType.Spider, InsectType.Beetle }.Contains(insect))
                         player.PlayerInsects.Add(insect, 2);
                     else

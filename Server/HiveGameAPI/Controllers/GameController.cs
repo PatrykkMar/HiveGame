@@ -3,6 +3,7 @@ using HiveGame.BusinessLogic.Models.Requests;
 using HiveGame.BusinessLogic.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net;
 
 namespace HiveGameAPI.Controllers
 {
@@ -26,6 +27,14 @@ namespace HiveGameAPI.Controllers
         }
 
         // GET: /Game/{gameId}
+        /// <summary>
+        /// GET: /Game/{gameId}
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <returns></returns>
+        // Mo¿na u¿yæ komentarza typu summary do  opisu danego kontrolera
+        // Do zastanowienia siê czy nie powinno byæ InternalServerError(500) zamiast NotFound(404)
+        // return StatusCode(500, $"Game with ID {gameId} not found.");
         [HttpGet("{gameId}")]
         public ActionResult<Game> GetGameById(string gameId)
         {
@@ -40,6 +49,8 @@ namespace HiveGameAPI.Controllers
         }
 
         // GET: /Game/player/{playerId}
+        // Do zastanowienia siê czy nie powinno byæ InternalServerError(500) zamiast NotFound(404)
+        // return StatusCode(500, $"No game found for player with ID {playerId}");
         [HttpGet("player/{playerId}")]
         public ActionResult<Game> GetGameByPlayerId(string playerId)
         {
@@ -54,6 +65,8 @@ namespace HiveGameAPI.Controllers
         }
 
         // POST: /Game
+        // Do zastanowienia siê czy nie powinno byæ InternalServerError(500) zamiast NotFound(404)
+        // return StatusCode(500, "Invalid game data.");
         [HttpPost]
         public ActionResult AddGame([FromBody] Game game)
         {
@@ -68,6 +81,8 @@ namespace HiveGameAPI.Controllers
         }
 
         // DELETE: /Game/{gameId}
+        // Do zastanowienia siê czy nie powinno byæ InternalServerError(500) zamiast NotFound(404)
+        // return StatusCode(500, "Invalid game data.");
         [HttpDelete("{gameId}")]
         public ActionResult DeleteGame(string gameId)
         {

@@ -47,6 +47,9 @@ builder.Services.AddSignalR(options =>
 {
     options.AddFilter<ExceptionHandlingHubFilter>();
 });
+
+// mo¿na u¿yæ metod rozszerzaj¹cych o odpowiednich nazwach dla typu IServiceCollection
+
 // Register application services
 builder.Services.AddScoped<IHiveGameService, HiveGameService>();
 builder.Services.AddScoped<IMatchmakingService, MatchmakingService>();

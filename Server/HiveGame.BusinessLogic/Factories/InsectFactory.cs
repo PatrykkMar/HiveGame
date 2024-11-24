@@ -16,6 +16,9 @@ namespace HiveGame.BusinessLogic.Factories
     {
         public Insect CreateInsect(InsectType insectType, PlayerColor playerColor)
         {
+            // można użyć nową składnię switch case
+            // return insectType switch
+            // case InsectType.Queen =>  new Queen(playerColor)
             switch (insectType)
             {
                 case InsectType.Queen:

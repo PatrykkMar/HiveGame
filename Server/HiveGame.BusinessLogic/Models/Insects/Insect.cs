@@ -144,6 +144,7 @@ namespace HiveGame.BusinessLogic.Models.Insects
 
             var freePoints = new List<Point2D>();
 
+            // lepiej użyć stałej const int NumberOfDirections = 6
             for(int i=0;i<6/*number of directions*/;i++)
             {
 

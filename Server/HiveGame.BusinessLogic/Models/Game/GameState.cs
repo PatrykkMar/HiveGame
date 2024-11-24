@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace HiveGame.BusinessLogic.Models
 {
+    // niezaimplementowane intefejsy można usunąc
     public interface GameState
     {
 

@@ -12,6 +12,8 @@ namespace HiveGame.BusinessLogic.Models.Board
 {
     public class BoardDTOFactory
     {
+
+        // można użyć składni new()
         public static BoardDTO CreateBoardDTO(HiveBoard board, PlayerColor playerColor, int turn)
         {
             var boardDto = new BoardDTO();

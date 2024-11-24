@@ -24,6 +24,7 @@ namespace HiveGame.Hubs
             }
             catch (Exception ex)
             {
+                // lepiej użyć operatora nameof(InvokeMethodAsync), który zwraca nazwę metody
                 _logger.LogError(ex, "Exception in hub method: {MethodName}", invocationContext.HubMethodName);
 
                 await invocationContext.Hub.Clients.Caller.SendAsync("ReceiveError",

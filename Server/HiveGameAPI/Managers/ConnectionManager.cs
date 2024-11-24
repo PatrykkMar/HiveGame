@@ -21,6 +21,8 @@ namespace HiveGame.Managers
             _gameRepository = gameRepository;
         }
 
+        // niepotrzebna prywatna właściwość, wystarczy prywatne pole readonly
+        // lepiej je zadeklarować przed konstruktorem
         private IGameRepository _gameRepository { get; set; }
         public void AddPlayerConnection(string playerId, string connectionId)
         {
@@ -37,6 +39,7 @@ namespace HiveGame.Managers
             if(game != null) 
                 _gameRepository.Remove(game.Id);
 
+            // lepiej użyć metody string.IsNullOrEmpty
             if(keyToRemove != null)
             {
                 PlayerConnectionDict.TryRemove(keyToRemove, out _);

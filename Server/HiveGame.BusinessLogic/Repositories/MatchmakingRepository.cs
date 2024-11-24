@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// niepotrzebne usings można usunąć
 
 namespace HiveGame.BusinessLogic.Repositories
 {
+    // Można oddzielić interfejs do oddzielnego folderu, np. Contract/IMatchmakingRepository.cs
     public interface IMatchmakingRepository
     {
         long Count { get; }
@@ -26,11 +28,11 @@ namespace HiveGame.BusinessLogic.Repositories
 
     public class MatchmakingRepository : IMatchmakingRepository
     {
-
         private readonly List<Player> _items;
 
         public MatchmakingRepository()
         {
+            // można użyć nowszej składni new()
             _items = new List<Player>();
         }
 
@@ -72,6 +74,7 @@ namespace HiveGame.BusinessLogic.Repositories
             var firstTwoItems = _items.Take(2).ToList();
             foreach (var item in firstTwoItems)
             {
+                // w liście znajdue się metoda _items.RemoveAt(int index), w której podaje się nr indeksu
                 _items.Remove(item);
             }
             return firstTwoItems;
